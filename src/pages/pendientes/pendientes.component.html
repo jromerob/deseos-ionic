@@ -1,14 +1,37 @@
 <ion-header>
-  <ion-navbar>
-      <ion-title>Pendientes</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>Pendientes</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Lista de Pendientes</h2>
-  <ul>
-    <li *ngFor="let lista of _listaDeseos.listas">
-      {{lista.nombre}}
-    </li>
-  </ul>
+  <ion-card *ngFor="let lista of _listaDeseos.listas">
+    <ion-item>
+      !! Boton
+    </ion-item>
+    <h2> {{lista.nombre}} </h2>
+    <ion-list>
+      <ion-item>
+        <ion-icon ios="ios-arrow-dropright" md="md-arrow-dropright"></ion-icon>
+        uno
+      </ion-item>
+      <ion-item>
+        <ion-icon ios="ios-arrow-dropright" md="md-arrow-dropright"></ion-icon>
+        dos
+      </ion-item>
+      <ion-item>
+        <ion-icon ios="ios-arrow-dropright" md="md-arrow-dropright"></ion-icon>
+        tres
+      </ion-item>
+    </ion-list>
+  </ion-card>
+  <ion-fab right bottom>
+    <button ion-fab color="primary"><ion-icon name="add"></ion-icon></button>
+    <ion-fab-list side="left">
+      <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
 </ion-content>
