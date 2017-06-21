@@ -11,17 +11,10 @@
     </ion-item>
     <h2> {{lista.nombre}} </h2>
     <ion-list>
-      <ion-item>
+
+      <ion-item *ngFor="let item of lista.items">
         <ion-icon ios="ios-arrow-dropright" md="md-arrow-dropright"></ion-icon>
-        uno
-      </ion-item>
-      <ion-item>
-        <ion-icon ios="ios-arrow-dropright" md="md-arrow-dropright"></ion-icon>
-        dos
-      </ion-item>
-      <ion-item>
-        <ion-icon ios="ios-arrow-dropright" md="md-arrow-dropright"></ion-icon>
-        tres
+        {{item.nombre}}
       </ion-item>
     </ion-list>
   </ion-card>

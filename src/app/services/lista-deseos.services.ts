@@ -7,14 +7,6 @@ export class ListaDeseosService {
   listas: Lista[]=[];
 
   constructor() {
-    let lista1 = new Lista("Compras supermercado");
-    let lista2 = new Lista("Juegos deseo");
-    let lista3 = new Lista("Cosas univ");
-
-
-    this.listas.push(lista1);
-    this.listas.push(lista2);
-    this.listas.push(lista3);
     console.log("servicio Creado")
   }
 }
