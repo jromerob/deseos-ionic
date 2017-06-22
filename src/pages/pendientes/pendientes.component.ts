@@ -13,7 +13,8 @@ export class PendientesComponent implements OnInit {
     private navController:NavController
   ) {  }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   irAgregar(){
     // importando el NavController controlamos la nevagación haciendo push sobre el array de componentes
