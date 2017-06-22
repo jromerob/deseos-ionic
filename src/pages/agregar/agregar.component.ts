@@ -30,6 +30,7 @@ export class AgregarComponent implements OnInit {
 
     let items = new ListaItem();
     items.nombre = this.nombreItem;
+    items.completado=false;
     this.items.push(items);
     this.nombreItem = ""
   }

@@ -15,11 +15,13 @@ export class ListaDeseosService {
 /* localStorage sólo almacens Strings por lo que convertimos el objeto listas en un JSON */
   actualizarData(){
     localStorage.setItem("data",JSON.stringify(this.listas));
+    console.log("datos actualizados")
   }
 
 /* Como lo que recuperamos es un String, tenemos que hacer un parse de este */
   cargarData(){
     if (localStorage.getItem("data"))  this.listas=JSON.parse(localStorage.getItem("data"));
+    console.log("datos cargados")
   }
 
 

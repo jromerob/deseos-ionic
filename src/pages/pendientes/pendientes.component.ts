@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ListaDeseosService} from '../../app/services/lista-deseos.services';
 import {NavController} from 'ionic-angular';
 import {AgregarComponent} from '../agregar/agregar.component';
+import {DetalleComponent} from '../detalle/detalle.component';
 
 @Component({
   selector: 'app-pendientes',
@@ -9,15 +10,20 @@ import {AgregarComponent} from '../agregar/agregar.component';
 })
 export class PendientesComponent implements OnInit {
   constructor(
-    private _listaDeseos:ListaDeseosService,
-    private navController:NavController
-  ) {  }
+    private _listaDeseos: ListaDeseosService,
+    private navController: NavController
+  ) { }
 
   ngOnInit() {
   }
 
-  irAgregar(){
+  irAgregar() {
     // importando el NavController controlamos la nevagación haciendo push sobre el array de componentes
     this.navController.push(AgregarComponent);
+  }
+
+  verDetalle(lista, idx) {
+    /* envío de parametros a una pantalla */
+    this.navController.push(DetalleComponent, { lista, idx });
   }
 }
