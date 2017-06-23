@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
 import {Lista, ListaItem} from '../../app/clases/index';
 import {ListaDeseosService} from '../../app/services/lista-deseos.services';
-
+import { AlertController } from 'ionic-angular';
 
 
 @Component({
@@ -12,12 +12,13 @@ import {ListaDeseosService} from '../../app/services/lista-deseos.services';
 export class DetalleComponent implements OnInit {
 
   idx: number;
-  lista: any;
+  lista: Lista;
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public listaDeseosService: ListaDeseosService
+    public listaDeseosService: ListaDeseosService,
+    public alertCtrl: AlertController
   ) {
     this.idx = navParams.get("idx");
     this.lista = navParams.get("lista");
@@ -32,7 +33,22 @@ export class DetalleComponent implements OnInit {
   };
 
   eliminarLista() {
-    this.listaDeseosService.eliminarLista(this.idx);
-    this.navCtrl.pop();
+    let alert = this.alertCtrl.create({
+   title: this.lista.nombre,
+   message: '¿ Seguro que quiere eliminar la lista ?',
+   buttons: ['Cancelar'
+     ,
+     {
+       text: 'Eliminar',
+       handler: () => {
+         this.listaDeseosService.eliminarLista(this.idx);
+         this.navCtrl.pop();
+       }
+     }
+   ]
+ });
+ alert.present();
+
   }
+
 }

@@ -24,7 +24,6 @@ export class ListaDeseosService {
     console.log("datos cargados")
   }
 
-
 /* para agregar una lista, la añadimos al array de listas y actualizamos el storage */
   agregarLista(lista:Lista){
     this.listas.push(lista);
