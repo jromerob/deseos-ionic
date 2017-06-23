@@ -29,6 +29,14 @@ export class DetalleComponent implements OnInit {
 
   actualizar(item: ListaItem) {
     item.completado = !item.completado
+    let listaCompletada:boolean=true;
+    for (let item of this.lista.items){
+      if (!item.completado){
+        listaCompletada=false;
+        break
+      }
+    }
+    this.lista.terminada=listaCompletada;
     this.listaDeseosService.actualizarData();
   };
 

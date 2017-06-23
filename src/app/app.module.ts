@@ -15,6 +15,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import {ListaDeseosService} from './services/lista-deseos.services';
 
 import {PlaceHolderPipe} from './pipes/placeHolder.pipe';
+import {PendientesPipe} from './pipes/pendientes.pipe';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import {PlaceHolderPipe} from './pipes/placeHolder.pipe';
     TerminadosComponent,
     AgregarComponent,
     PlaceHolderPipe,
+    PendientesPipe,
     DetalleComponent
   ],
   imports: [

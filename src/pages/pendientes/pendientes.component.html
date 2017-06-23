@@ -6,7 +6,7 @@
 
 <ion-content padding>
 
-  <ion-card *ngFor="let lista of _listaDeseos.listas; let i=index">
+  <ion-card *ngFor="let lista of _listaDeseos.listas | pendientes ; let i=index">
 
     <ion-item color="dark" (click)="verDetalle(lista, i)">
       {{lista.nombre}}
@@ -27,6 +27,16 @@
     </ion-list>
 
   </ion-card>
+
+  <ion-card *ngIf="(_listaDeseos.listas | pendientes).length==0">
+    <ion-item text-center>
+      <ion-icon ios="ios-sad" md="md-sad" class="big-icon"></ion-icon>
+      <p text-center>
+        No hay listas
+      </p>
+    </ion-item>
+  </ion-card>
+
   <ion-fab right bottom>
     <button ion-fab color="primary" (click)="irAgregar()"><ion-icon name="add"></ion-icon></button>
   </ion-fab>
